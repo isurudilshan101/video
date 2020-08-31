@@ -3,6 +3,10 @@ import React from 'react';
 class SearchBar extends React.Component{
 
     state={term: 'dfsfdgd'};
+    onInputChange=(event)=>{
+        this.setState({term:event.target.value});
+    }
+
     render(){
 
         return(
@@ -10,7 +14,11 @@ class SearchBar extends React.Component{
                     <form className="ui form">
                         <div className="field">
                             <label>Video Search</label>
-                            <input type="text" value={this.state.term}/>
+                            <input 
+                            type="text" 
+                            value={this.state.term}
+                            onChange={this.onInputChange}
+                            />
                         </div>
 
                     </form>
