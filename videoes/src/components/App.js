@@ -7,6 +7,10 @@ import VideoDetail from './VideoDetail';
 class App extends React.Component{
     state={videos:[],selectVideo:null};
 
+    componentDidMount(){
+        this.onTermSubmit('cars');
+    }
+
     onTermSubmit= async term=>{
       const response =await youtube.get('/search',{
            params:{
