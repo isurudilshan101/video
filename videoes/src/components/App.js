@@ -19,7 +19,7 @@ class App extends React.Component{
       
        this.setState({videos: response.data.items});
     };
-    onVideoSelect=(video)=>{
+    onVideoSelect=video=>{
       this.setState({selectedVideo:video});
     };
 
@@ -29,7 +29,7 @@ class App extends React.Component{
 
             <div className="ui container">
             <SearchBar onFormSubmit={this.onTermSubmit}/>
-              <VideoDetail video={this.state.selectVideo}/>
+              <VideoDetail video={this.state.selectedVideo}/>
             <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos}/>
             </div>
             
